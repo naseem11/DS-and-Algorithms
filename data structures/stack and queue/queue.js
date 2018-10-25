@@ -7,7 +7,7 @@ class Queue {
     }
 
     add(record) {
-        _data.get(this).unShift(record);
+        _data.get(this).unshift(record);
         return _data.get(this).length;
     }
 
