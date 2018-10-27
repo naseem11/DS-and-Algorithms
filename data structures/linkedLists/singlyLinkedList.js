@@ -153,14 +153,14 @@ class SinglyLinkedList {
 
     /******************REVERSE METHOD**************************/
     reverse() {
-        
+
         let currentNode = this.head;
         let nextNode = null;
         let previousNode = null;
         // swap the head and tail
-        this.head=this.tail;
+        this.head = this.tail;
         this.tail = currentNode;
-        
+
 
         for (let i = 0; i < this.length; i++) {
             //  repeat the following for each node in the list
@@ -172,6 +172,27 @@ class SinglyLinkedList {
         }
 
         return this;
+    }
+    /******************FOREACH METHOD**************************/
+    forEach(fn){
+        let currentNode=this.head;
+        let index=0;
+        while(currentNode){
+            fn(currentNode,index++);
+            currentNode=currentNode.next;
+        }
+    }
+
+    /******************ITERATOR  METHOD**************************/
+    *[Symbol.iterator]() {
+       
+        let node = this.head;
+        while (node) {
+            yield node;
+            node = node.next;
+        }
+
+
     }
 
 }
