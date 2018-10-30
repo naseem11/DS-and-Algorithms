@@ -16,3 +16,7 @@ function binarySearch(sortedArray, value) {
 
     return -1;
 }
+
+/*  Time Complexity -->  Best case --> O(1)  ,  Average and Worst case --> O(log n)
+    ----------------
+*/
