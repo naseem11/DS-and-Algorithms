@@ -68,13 +68,14 @@ class SinglyLinkedList {
         //if list has more than one node  
         this.head = this.head.next;
         this.length--;
+        returnNode.next=null;
         return returnNode;
     }
 
     /******************UNSHIFT METHOD**************************/
     unshift(value) {
         if (!this.head) {
-            this.push(new Node(value));
+            this.push(value);
         } else {
 
             this.head = new Node(value, this.head)
@@ -148,6 +149,7 @@ class SinglyLinkedList {
         const previousNode = this.getAt(index - 1);
         previousNode.next = nodeToRemove.next;
         this.length--;
+        nodeToRemove.next=null;
         return nodeToRemove;
     }
 
